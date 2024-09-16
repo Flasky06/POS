@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>POS - products</title>
+    <title>POS - members</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <!-- Include jQuery and Select2 CSS and JS -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -44,31 +44,43 @@
     {{-- container --}}
     <div class="container">
         <div class="container__header">
-            <h2>Product List</h2>
+            <h2>Members List</h2>
         </div>
         <div class="container__actions">
             <div class="search">
                 <input type="text" placeholder="Search here">
             </div>
             <div class="container__buttons">
-                <button class="primary" id="openModalBtn">Add Product</button>
+                <button class="primary" id="openModalBtn">Members List</button>
             </div>
         </div>
-        {{-- table --}}
+
+
         {{-- table --}}
         <table class="product-table">
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Category</th>
+                   <th>Code</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>email</th>
                     <th>Action</th>
+
+
                 </tr>
             </thead>
             <tbody>
                 <!-- Example Row -->
                 <tr>
                     <td>1</td>
-                    <td>Cement</td>
+                    <td>POO2</td>
+                    <td>Bonface Njuguna</td>
+                    <td>+254717299106</td>
+                    <td>bonnienjuguna@gmail.com</td>
+
+
+
                     <td><button class="primary">Edit</button> <button class="danger">Delete</button></td>
                 </tr>
                 <!-- More rows as needed -->

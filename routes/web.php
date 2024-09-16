@@ -14,8 +14,8 @@ Route::get('/products', function () {
     return view('products');
 });
 
-Route::get('/customers', function () {
-    return view('customers');
+Route::get('/members', function () {
+    return view('members');
 });
 Route::get('/categories', function () {
     return view('categories');

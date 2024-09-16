@@ -13,50 +13,6 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <style>
-        .container {
-            margin-left: 250px;
-            /* Space for sidebar */
-            padding: 20px;
-            flex: 1;
-            max-width: 1000px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .container__header {
-            margin-bottom: 20px;
-            /* Optional background color and border */
-            /* background-color: #f8f9fa; */
-            /* border-bottom: 1px solid #ddd; */
-        }
-
-        .container__header h2 {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .container__actions {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .container__actions .search {
-            width: 50%;
-        }
-
-        .container__actions input[type="text"] {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 100%;
-        }
-
         /* Table Styles */
         .product-table {
             width: 100%;
@@ -162,30 +118,6 @@
             margin-top: 20px;
         }
 
-        .primary {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .danger {
-            background-color: #f44336;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .primary:hover,
-        .danger:hover {
-            opacity: 0.9;
-        }
-
-
         /* Responsive Design */
         @media (max-width: 600px) {
             .container {
@@ -204,10 +136,13 @@
                     <a href="/dashboard" class="sidebar__menu-link sidebar__menu-link--main">Dashboard</a>
                 </li>
                 <li class="sidebar__menu-item">
+                    <a href="/categories" class="sidebar__menu-link sidebar__menu-link--main">category</a>
+                </li>
+                <li class="sidebar__menu-item">
                     <a href="/products" class="sidebar__menu-link sidebar__menu-link--main">Products</a>
                 </li>
                 <li class="sidebar__menu-item">
-                    <a href="/customers" class="sidebar__menu-link sidebar__menu-link--main">Customers</a>
+                    <a href="/members" class="sidebar__menu-link sidebar__menu-link--main">Members</a>
                 </li>
                 <li class="sidebar__menu-item">
                     <a href="/profile" class="sidebar__menu-link sidebar__menu-link--main">Profile</a>
@@ -215,6 +150,8 @@
             </ul>
         </nav>
     </aside>
+
+    {{-- container --}}
     <div class="container">
         <div class="container__header">
             <h2>Product List</h2>
@@ -228,6 +165,7 @@
                 <button class="danger">Delete</button>
             </div>
         </div>
+        {{-- table --}}
         <table class="product-table">
             <thead>
                 <tr>

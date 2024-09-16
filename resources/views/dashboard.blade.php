@@ -24,7 +24,7 @@
                     <a href="/products" class="sidebar__menu-link sidebar__menu-link--main">Products</a>
                 </li>
                 <li class="sidebar__menu-item">
-                    <a href="/customers" class="sidebar__menu-link sidebar__menu-link--main">Customers</a>
+                    <a href="/members" class="sidebar__menu-link sidebar__menu-link--main">Members</a>
                 </li>
                 <li class="sidebar__menu-item">
                     <a href="/profile" class="sidebar__menu-link sidebar__menu-link--main">Profile</a>
