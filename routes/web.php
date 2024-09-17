@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
+
+// UI routes
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth');
 });
 
 Route::get('/dashboard', function () {
@@ -19,4 +22,16 @@ Route::get('/members', function () {
 });
 Route::get('/categories', function () {
     return view('categories');
+    });
+
+// API routes
+Route::post('/register', [userController::class, 'register']);
+
+Route::post('/login', [userController::class, 'login']);
+
+
+
+// routes/web.php
+Route::get('/test', function () {
+    return 'Test route is working!';
 });

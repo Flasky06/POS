@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+
+
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>POS - Login / Register</title>
-    <style>
+   <style>
         * {
             margin: 0;
             padding: 0;
@@ -115,13 +117,13 @@
             <form action="/login" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label for="lemail">Email:</label>
-                    <input type="email" id="lemail" name="lemail" required>
+                    <label for="loginemail">Email:</label>
+                    <input type="email" id="loginemail" name="loginemail" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="lpassword">Password:</label>
-                    <input type="password" id="lpassword" name="lpassword" required>
+                    <label for="loginpassword">Password:</label>
+                    <input type="password" id="loginpassword" name="loginpassword" required>
                 </div>
 
                 <input type="submit" value="Login">
@@ -142,7 +144,7 @@
             <form action="/register" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label for="name">Full Name:</label>
+                    <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
                 </div>
 

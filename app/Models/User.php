@@ -32,7 +32,7 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /**
+    /**zzz
      * Get the attributes that should be cast.
      *
      * @return array<string, string>
