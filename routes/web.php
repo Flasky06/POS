@@ -1,37 +1,32 @@
 <?php
 
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-
-// UI routes
 Route::get('/', function () {
-    return view('auth');
+    return view('auth/login');
+});
+
+
+Route::get('/register', function () {
+    return view('auth/register');
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-});
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/products', function () {
-    return view('products');
-});
 
-Route::get('/members', function () {
-    return view('members');
-});
 Route::get('/categories', function () {
     return view('categories');
-    });
-
-// API routes
-Route::post('/register', [userController::class, 'register']);
-
-Route::post('/login', [userController::class, 'login']);
+})->middleware(['auth', 'verified'])->name('categories');
 
 
 
-// routes/web.php
-Route::get('/test', function () {
-    return 'Test route is working!';
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+require __DIR__.'/auth.php';
