@@ -3,11 +3,20 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+<<<<<<< HEAD
+=======
+
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+>>>>>>> 910265b (Initial commit after reinitializing Git)
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+<<<<<<< HEAD
 class User extends Authenticatable
+=======
+class User extends Authenticatable implements MustVerifyEmail
+>>>>>>> 910265b (Initial commit after reinitializing Git)
 {
     use HasFactory, Notifiable;
 

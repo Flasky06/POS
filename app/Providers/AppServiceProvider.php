@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+<<<<<<< HEAD
+=======
+use Illuminate\Support\Facades\Vite;
+>>>>>>> 910265b (Initial commit after reinitializing Git)
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+<<<<<<< HEAD
         //
+=======
+        Vite::prefetch(concurrency: 3);
+>>>>>>> 910265b (Initial commit after reinitializing Git)
     }
 }

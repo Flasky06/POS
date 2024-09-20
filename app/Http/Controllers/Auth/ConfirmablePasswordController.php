@@ -7,16 +7,27 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+<<<<<<< HEAD
 use Illuminate\View\View;
+=======
+use Inertia\Inertia;
+use Inertia\Response;
+>>>>>>> 910265b (Initial commit after reinitializing Git)
 
 class ConfirmablePasswordController extends Controller
 {
     /**
      * Show the confirm password view.
      */
+<<<<<<< HEAD
     public function show(): View
     {
         return view('auth.confirm-password');
+=======
+    public function show(): Response
+    {
+        return Inertia::render('Auth/ConfirmPassword');
+>>>>>>> 910265b (Initial commit after reinitializing Git)
     }
 
     /**
