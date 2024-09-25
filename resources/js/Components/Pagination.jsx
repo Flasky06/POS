@@ -10,11 +10,11 @@ export default function Pagination({ links }) {
           key={link.label}
           href={link.url || ""}
           className={
-            "inline-block py-2 px-3 rounded-lg text-gray-200 text-xs " +
-            (link.active ? "bg-gray-950 " : " ") +
-            (!link.url
-              ? "!text-gray-500 cursor-not-allowed "
-              : " hover:bg-gray-950")
+            "inline-block py-2 px-4 mx-1 rounded-lg text-xs font-medium transition-colors " +
+            (link.active
+              ? "bg-gray-900 text-white "
+              : "dark:text-black dark:hover:bg-gray-700 dark:hover:text-white") +
+            (!link.url ? "cursor-not-allowed opacity-50 " : "")
           }
           dangerouslySetInnerHTML={{ __html: link.label }}
         ></Link>
