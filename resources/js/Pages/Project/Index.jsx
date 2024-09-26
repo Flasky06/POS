@@ -8,7 +8,9 @@ import {
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { Head, Link, router } from "@inertiajs/react";
-import React from "react";
+
+import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
+import TableHeading from "@/Components/TableHeading";
 
 export default function Index({ auth, projects, queryParams = null }) {
   queryParams = queryParams || {};
@@ -26,6 +28,21 @@ export default function Index({ auth, projects, queryParams = null }) {
   const onKeyPress = (name, e) => {
     if (e.key !== "Enter") return;
     searchFieldChanged(name, e.target.value);
+  };
+
+  const sortChanged = (name) => {
+    if (name === queryParams.sort_field) {
+      if (queryParams.sort_direction === "asc") {
+        queryParams.sort_direction = "desc";
+      } else {
+        queryParams.sort_direction = "asc";
+      }
+    } else {
+      queryParams.sort_field = name;
+      queryParams.sort_direction = "asc";
+    }
+
+    router.get(route("project.index"), queryParams);
   };
 
   return (
@@ -49,14 +66,59 @@ export default function Index({ auth, projects, queryParams = null }) {
                                 "
                 >
                   <tr className="text-nowrap">
-                    <th className="px-3 py-3">ID</th>
-                    <th className="px-3 py-3">Image</th>
-                    <th className="px-3 py-3">Name</th>
-                    <th className="px-3 py-3">Status</th>
-                    <th className="px-3 py-3">Create Date</th>
-                    <th className="px-3 py-3">Due Date</th>
+                    <TableHeading
+                      name="id"
+                      sort_field={queryParams.sort_field}
+                      sort_direction={queryParams.sort_direction}
+                      sortChanged={sortChanged}
+                    >
+                      ID
+                    </TableHeading>
+
+                    <th onClick={(e) => sortChanged()} className="px-3 py-3">
+                      Image
+                    </th>
+
+                    <TableHeading
+                      name="name"
+                      sort_field={queryParams.sort_field}
+                      sort_direction={queryParams.sort_direction}
+                      sortChanged={sortChanged}
+                    >
+                      Name
+                    </TableHeading>
+
+                    <TableHeading
+                      name="status"
+                      sort_field={queryParams.sort_field}
+                      sort_direction={queryParams.sort_direction}
+                      sortChanged={sortChanged}
+                    >
+                      Status
+                    </TableHeading>
+                    <TableHeading
+                      name="create_data"
+                      sort_field={queryParams.sort_field}
+                      sort_direction={queryParams.sort_direction}
+                      sortChanged={sortChanged}
+                    >
+                      Create Date
+                    </TableHeading>
+                    <TableHeading
+                      name="due_date"
+                      sort_field={queryParams.sort_field}
+                      sort_direction={queryParams.sort_direction}
+                      sortChanged={sortChanged}
+                    >
+                      Due Data
+                    </TableHeading>
                     <th className="px-3 py-3">Created By</th>
-                    <th className="px-3 py-3 text-right">Action</th>
+                    <th
+                      onClick={(e) => sortChanged()}
+                      className="px-3 py-3 text-right"
+                    >
+                      Action
+                    </th>
                   </tr>
                 </thead>
                 <thead

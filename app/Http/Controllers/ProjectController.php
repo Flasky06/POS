@@ -16,9 +16,12 @@ class ProjectController extends Controller
     {
         $query = Project::query();
 
+        $sortField=request("sort_field",'created_at');
+        $sortDirection=request("sort_direction",'desc');
+
         // Filter by name if provided
         if (request("name")) {
-            $query->where('name', 'like', '%' . request('name') . '%');
+            $query->where('name','like', '%' . request('name') . '%');
         }
 
         // Filter by status if provided
@@ -27,7 +30,7 @@ class ProjectController extends Controller
         }
 
         // Paginate the results
-        $projects = $query->paginate(10)->onEachSide(1);
+        $projects = $query->orderBy($sortField,$sortDirection)->paginate(10)->onEachSide(1);
 
         // Return the view with projects and query parameters
         return inertia("Project/Index", [
