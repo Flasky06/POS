@@ -28,8 +28,8 @@ To run this project locally:
 
 1.Clone the repository:
 
-    git clone https://github.com/yourusername/your-repo.git
-    cd your-repo
+    git clone git@github.com:Flasky06/laravel11-react-app.git
+    cd laravel11-react-app
 
 2.Install dependencies:
 
