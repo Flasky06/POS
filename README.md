@@ -27,25 +27,31 @@ Setup and Installation
 To run this project locally:
 
 1.Clone the repository:
+
     git clone https://github.com/yourusername/your-repo.git
     cd your-repo
 
 2.Install dependencies:
+
     composer install
     npm install
 
 3.Copy .env.example to .env and configure the environment variables:
+
     cp .env.example .env
 
 4.Generate an application key:
+
     php artisan key:generate
 
 5.Set up the database:
+
   Update .env with your database configuration.
   Run the following commands:
           php artisan migrate
 
 6.Run the project:
+
     npm run dev
     php artisan serve
 
